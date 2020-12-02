@@ -22,12 +22,12 @@
 
 ---
 ### Methods / Métodos
-| function     | parameter           | return          |
-|--------------|---------------------|-----------------|
-| instance.new | index `number` 0-63 | `nil`           |
-| :addPlayer   | source `number`     | `nil`           |
-| :removePlayer| source `number`     | `nil`           |
-| :getPlayers  | none                | `table` sources |
+| function     | parameter           | return                 |
+|--------------|---------------------|------------------------|
+| instance.new | index `number` 0-63 | `table` instance object|
+| :addPlayer   | source `number`     | `nil`                  |
+| :removePlayer| source `number`     | `nil`                  |
+| :getPlayers  | none                | `table` sources        |
 
 ### Example / Ejemplo
 #### client-side
