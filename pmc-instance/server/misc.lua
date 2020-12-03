@@ -75,8 +75,8 @@ setmetatable(U, {
 
 AddEventHandler('__instance_internal:instance:player:add', function(...) U:EnsureAddPlayer(...) end)
 AddEventHandler('__instance_internal:instance:player:remove', function(...) U:EnsureRemovePlayer(...) end)
-AddEventHandler('__instance_internal:instance:players:get', function(inIndex, source, cb)
-	if U:Ensure(inIndex, 'number') and U:Ensure(source, 'number') then
+AddEventHandler('__instance_internal:instance:players:get', function(inIndex, cb)
+	if U:Ensure(inIndex, 'number') then
 		if U:EnsureInstance(inIndex) then
 			cb(Instances[inIndex].players)
 		end
