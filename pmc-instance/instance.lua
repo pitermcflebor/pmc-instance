@@ -8,10 +8,12 @@ _G._INSTANCE_INTERNAL = {
 		end
 	end,
 	InstanceExists = function(index)
-		if index > 0 and index < 64 then
-			return true
-		end
-		return false
+		-- latest version removed limitation of instances :)
+		--if index > 0 and index < 64 then
+		--	return true
+		--end
+		--return false
+		return true
 	end,
 }
 _G.instance = {}
@@ -49,8 +51,8 @@ instanceMeta.__index = {
 					end
 				end
 			})
-		else
-			print('[tl-instance] Tried to set an invalid instance (0-63)')
+		--else
+		--	print('[tl-instance] Tried to set an invalid instance (0-63)')
 		end
 	end,
 }
