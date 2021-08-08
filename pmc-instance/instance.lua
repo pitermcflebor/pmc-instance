@@ -39,7 +39,7 @@ instanceMeta.__index = {
 						return function(self, source)
 							assert(type(source) == 'number', 'invalid Lua type in argument #1, got '..type(source))
 							if _INSTANCE_INTERNAL.SourceExists(source) then
-								TriggerEvent('__instance_internal:instance:player:remove', source)
+								TriggerEvent('__instance_internal:instance:player:remove', self.instanceIndex, source)
 							end
 						end
 					elseif index == 'getPlayers' then

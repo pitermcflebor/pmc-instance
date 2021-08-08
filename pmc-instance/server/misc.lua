@@ -42,28 +42,35 @@ setmetatable(U, {
 						SPRB(_s, _in)
 						self:DebugMessage(_s, _in)
 					else
-						self:EnsureChangePlayer(_in, _s)
+						self:EnsureChangePlayer(_in, _s, true)
 					end
 				end
 			end
 		end,
-		EnsureRemovePlayer = function(self, _s)
+		EnsureRemovePlayer = function(self, _in, _s)
 			if self:Ensure(_s, 'number') then
-				self:EnsureChangePlayer(0, _s)
+				self:EnsureChangePlayer(_in, _s)
 			end
 		end,
-		EnsureChangePlayer = function(self, _in, _s)
+		EnsureChangePlayer = function(self, _in, _s, _shouldAdd)
 			if self:Ensure(_in, 'number') and self:Ensure(_s, 'number') then
 				local _c_in = GPRB(_s)
+
 				if self:EnsureInstance(_in) and self:EnsureInstance(_c_in) then
 					if _c_in ~= 0 then
-						for _i, _v in ipairs(Instances[_in].players) do
-							if _v == _s then
-								Instances[_in].players[_i] = nil
-								break
+						if _shouldAdd then
+							Instances[_in].players[#Instances[_in].players + 1] =_s
+						else
+							for _i, _v in ipairs(Instances[_in].players) do
+								if _v == _s then
+									Instances[_in].players[_i] = nil
+									break
+								end
 							end
 						end
-						table.insert(Instances[_in].players, _s)
+
+						_in = _shouldAdd and _in or 0
+						
 						SPRB(_s, _in)
 						self:DebugMessage(_s, _in)
 					end
