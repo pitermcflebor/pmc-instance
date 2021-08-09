@@ -47,9 +47,9 @@ setmetatable(U, {
 				end
 			end
 		end,
-		EnsureRemovePlayer = function(self, _in, _s, _shouldAdd)
+		EnsureRemovePlayer = function(self, _in, _s)
 			if self:Ensure(_s, 'number') then
-				self:EnsureChangePlayer(_in, _s, _shouldAdd)
+				self:EnsureChangePlayer(_in, _s, false)
 			end
 		end,
 		EnsureChangePlayer = function(self, _in, _s, _shouldAdd)
