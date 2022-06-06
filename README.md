@@ -20,11 +20,31 @@
 - Añade a tu fxmanifest `server_script '@pmc-instance/instance.lua'`
 - Opcional: añade `dependency 'pmc-instance'` a tu script (*probablemente no funciona en cliente porque la dependencia no existe*)
 
+## Installation [FR]
+- Téléchargez la dernière version
+- Décompressez le fichier et ajoutez `pmc-instance` dans votre dossier de ressources
+- Ajoutez `ensure pmc-instance` à votre .cfg
+
+## Usage [FR]
+**Ceci est un script côté serveur uniquement**
+- Ajoutez à votre fxmanifest `server_script '@pmc-instance/instance.lua'`
+- Optionnelle: ajoutez `dependency 'pmc-instance'` à votre script (*le côté client va probablement crash, car il n'y a pas de dépendance côté client pour `pmc-instance`*)
+
+## Instalação [PR]
+- Baixe a versão mais recente
+- Descompacte o arquivo e adicione o `pmc-instance` para sua pasta de recursos
+- Adicionar `ensure pmc-instance` para o seu .cfg
+
+## Uso [PR]
+**Este é um script apenas do lado do servidor**
+- Adicione ao seu fxmanifest `server_script '@pmc-instance/instance.lua'`
+- Opcional: adicianar `dependency 'pmc-instance'` para o seu script (*provavelmente o lado do cliente irá travar porque não há nenhuma dependência do lado do cliente para `pmc-instance`*)
+
 ---
 ### Methods / Métodos
 | function     | parameter           | return                 |
 |--------------|---------------------|------------------------|
-| instance.new | index `number` 0-63 | `table` instance object|
+| instance.new | index `number`      | `table` instance object|
 | :addPlayer   | source `number`     | `nil`                  |
 | :removePlayer| source `number`     | `nil`                  |
 | :getPlayers  | none                | `table` sources        |
